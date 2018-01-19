@@ -1,4 +1,4 @@
-# TouchTransform
+# Unity Touch Transform
 Script for Unity3D for using Touches to Move Rotate and Scale Transforms
 
 ## Usage

@@ -22,14 +22,7 @@ public class TouchTransformableObject : MonoBehaviour, IPointerClickHandler, IPo
         var screenPosition = Camera.main.WorldToViewportPoint(Camera.main.transform.position + Camera.main.transform.forward * 10);
         Vector2 point = new Vector2(screenPosition.x, screenPosition.y);
     }
-    void OnDrawGizmos() {
-        if (Input.touchCount == 1) {
-            var touch = Input.GetTouch(0);
-            Gizmos.DrawSphere(Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 1)), 1);
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(Vector3.ProjectOnPlane(Camera.main.ScreenToWorldPoint(touch.position), transform.up), .1f);
-        }
-    }
+  
     void Update() {
         if (!isSelected)
             return;
@@ -37,13 +30,20 @@ public class TouchTransformableObject : MonoBehaviour, IPointerClickHandler, IPo
             if (Input.touchCount == 1) {
                 var touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Moved) {
-                    //Find Parents Plane and Project Touchpoint on it
-                    var plane = new Plane(transform.parent.up, transform.parent.position);
-                    var ray = Camera.main.ScreenPointToRay(touch.position);
-                    float dist;
-                    //Raycast against Plane to position object under Touch
-                    if (plane.Raycast(ray, out dist))
-                        transform.position = ray.GetPoint(dist);
+                    //There are two methods for moving the object, uncomment the one you want
+
+                    //This moves the Object alongsite a plane determined by its parent
+
+                    ////Find Parents Plane and Project Touchpoint on it
+                    //var plane = new Plane(transform.forward, transform.parent.position);
+                    //var ray = Camera.main.ScreenPointToRay(touch.position);
+                    //float dist;
+                    ////Raycast against Plane to position object under Touch
+                    //if (plane.Raycast(ray, out dist))
+                    //    transform.position = ray.GetPoint(dist);
+                    
+                    //This moves the Object alongsite its Distance from the Camera
+                    transform.position = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
                 }
             }
         }

@@ -237,12 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea239a0a9c03d646a72f62da7d602c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinchTurnRatio: 1.5707964
-  minTurnAngle: 5
-  pinchRatio: 1
-  minPinchDistance: 3
+  pinchTurnRatio: 1.57
+  minTurnAngle: 1
+  pinchRatio: 0.003
+  minPinchDistance: 6
   panRatio: 1
-  minPanDistance: 3
+  minPanDistance: 1
   turnAngleDelta: 0
   turnAngle: 0
   pinchDistanceDelta: 0
@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 2015801196}
   - component: {fileID: 2015801195}
   - component: {fileID: 2015801194}
+  - component: {fileID: 2015801199}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -361,6 +362,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2015801199
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2015801193}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2088833500
 GameObject:
   m_ObjectHideFlags: 0

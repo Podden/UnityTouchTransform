@@ -44,6 +44,10 @@ public class TouchMovement : MonoBehaviour {
     /// </summary>
     [HideInInspector]
     public float pinchDistance;
+
+    /// <summary>
+    /// The Distance in x,y coordinate which the Touch has moved since last Update
+    /// </summary>
     [HideInInspector]
     public Vector2 panDistance;
 
@@ -85,8 +89,7 @@ public class TouchMovement : MonoBehaviour {
                 } else {
                     pinchDistance = pinchDistanceDelta = 0;
                 }
-                Debug.Log("Pinchdistance: " + pinchDistance);
-
+                
                 // ... or check the delta angle between them ...
                 turnAngle = Angle(touch1.position, touch2.position);
                 float prevTurn = Angle(touch1.position - touch1.deltaPosition,
