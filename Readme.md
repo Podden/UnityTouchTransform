@@ -1,3 +1,5 @@
+![gif](readme.gif)
+
 # Unity Touch Transform
 Script for Unity3D for using Touches to Move Rotate and Scale Transforms
 
@@ -6,3 +8,4 @@ Script for Unity3D for using Touches to Move Rotate and Scale Transforms
 - Place TouchMovement Singleton somewhere in the Scene and adjust the settings
 - Add an Eventsystem and a Raycaster
 - Build and Run on a machine with Touchscreen
+
